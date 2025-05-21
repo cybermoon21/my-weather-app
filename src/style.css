@@ -41,3 +41,46 @@ header h1 {
     font-size: 15px;
     color: white;
 }
+
+.main-panel-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.main-details {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    width: 150px;
+    text-align: center;
+    height: 100px;
+    margin: 20px;
+}
+
+.main-details h3 {
+    margin: 5px;
+}
+
+.main-details hr {
+    width: 90%;
+}
+
+.main-temp {
+    margin: auto 10px auto 0;
+    text-align: end;
+}
+
+.main-temp h2 {
+    font-size: 35px;
+    margin: 0;
+}
+
+.main-temp h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.main-temp p {
+    font-size: 60px;
+    margin: 0;
+}
