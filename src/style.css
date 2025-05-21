@@ -1,10 +1,11 @@
 body {
     background: radial-gradient(rgb(170, 153, 170) 0%, rgb(139, 102, 241) 100%);
     font-family: "Shadows Into Light", cursive;
+    color: white;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.2);
     max-width: 600px;
     margin:30px auto;
     padding: 30px;
@@ -25,17 +26,18 @@ header h1 {
 
 .search-form-input {
     background-color: rgba(139, 102, 241, 0.08);
-    border: none;
+    border: 1px solid white;
     border-radius: 6px;
     width: 80%;
     font-size: 15px;
     padding: 10px 20px;
+    color: white;
 }
 
 .search-form-button {
-    background-color: rgb(139, 102, 241);
+    background-color: rgba(139, 102, 241, 0.45);
     padding: 10px 20px;
-    border: none;
+    border: 1px solid white;
     margin-left: 5px;
     border-radius: 6px;
     font-size: 15px;
@@ -61,6 +63,10 @@ header h1 {
     margin: 5px;
 }
 
+hr {
+    color: white;
+}
+
 .main-details hr {
     width: 90%;
 }
@@ -84,3 +90,32 @@ header h1 {
     font-size: 60px;
     margin: 0;
 }
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 15px;
+}
+
+.forecast-container {
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.forecast-container h3 {
+    font-size: 16px;
+    margin: 5px 0 0 0;
+}
+
+.weather-emoji {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.weather-temp {
+    font-size: 20px;
+    margin: 0 0 5px 0;
+}
+
