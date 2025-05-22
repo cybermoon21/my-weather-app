@@ -38,7 +38,7 @@ header h1 {
 .search-form-button {
     background-color: rgba(139, 102, 241, 0.4);
     padding: 10px 20px;
-    border: 1px solid white;
+    border: 1px solid #ffffff;
     margin-left: 5px;
     border-radius: 6px;
     font-size: 15px;
@@ -48,7 +48,7 @@ header h1 {
 .main-panel-info {
     display: flex;
     justify-content: space-between;
-    margin: 0 20px;
+    margin: 10px 20px 0 20px;
 }
 
 .main-details {
@@ -61,7 +61,7 @@ header h1 {
 }
 
 .main-details h3 {
-    margin: 5px 0;
+    margin: 5px 0 1px 0;
     font-size: 16px;
 }
 
@@ -70,12 +70,10 @@ header h1 {
     margin: auto 0;
 }
 
-hr {
-    color: white;
-}
-
 .main-details hr {
     width: 90%;
+    color: white;
+    margin-top: 0;
 }
 
 .main-temp {
@@ -86,16 +84,28 @@ hr {
 .main-temp h2 {
     font-size: 35px;
     margin: 0;
+    letter-spacing: 2px;
 }
 
 .main-temp h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 20px;
+    letter-spacing: 2px;
 }
 
 .main-temp p {
-    font-size: 60px;
+    font-size: 75px;
     margin: 0;
+    letter-spacing: 2px;
+}
+
+.curve {
+    margin: -10px auto 0 -30px;
+    width: 110%;
+    border-bottom-left-radius: 200%;
+    border-bottom-right-radius: 200%;
+    border-bottom: 3px solid white;
+    height: 25px;
 }
 
 .forecast {
