@@ -97,6 +97,7 @@ header h1 {
     font-size: 75px;
     margin: 0;
     letter-spacing: 2px;
+    line-height: 80px;
 }
 
 .curve {
