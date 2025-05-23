@@ -1,15 +1,4 @@
-function getApi(event) {
-    event.preventDefault();
-
-    let apiKey = '434at24abcb5077obabee921e64ef383';
-    let city = document.querySelector("#search-input").value;
-
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-    
-    axios.get(apiUrl).then(runSearch);
-}
-
-function runSearch(response){
+function updateApp(response){
     let cityElement = document.querySelector("#current-city");
     cityElement.innerHTML = response.data.city;
 
@@ -22,6 +11,21 @@ function runSearch(response){
     let currentTempElement = document.querySelector("#current-temp");
     let currentTemp = Math.round(response.data.temperature.current);
     currentTempElement.innerHTML = currentTemp;
+}
+
+function getApi(city) {
+    let apiKey = '434at24abcb5077obabee921e64ef383';
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    
+    axios.get(apiUrl).then(updateApp);
+}
+
+function runSearch(event){
+    event.preventDefault();
+    
+    let city = document.querySelector("#search-input").value;
+    
+    getApi(city);
 }
 
 function formatDate(date){
@@ -58,7 +62,7 @@ function formatTime(date){
 }
 
 let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", getApi);
+searchFormElement.addEventListener("submit", runSearch);
 
 let currentDate = new Date();
 
@@ -67,3 +71,4 @@ currentDateElement.innerHTML = formatDate(currentDate);
 
 let currentTimeElement = document.querySelector("#current-time");
 currentTimeElement.innerHTML = formatTime(currentDate);
+
