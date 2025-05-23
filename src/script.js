@@ -1,6 +1,6 @@
 function formatDate(date){
     let days = ["Sunday", "Monday", "Tuesday", "Thursday", "Friday", "Saturday"];
-    let day = days[date.getDay();];
+    let day = days[date.getDay()];
 
     let curDate = date.getDate();
 
