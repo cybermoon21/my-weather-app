@@ -1,13 +1,11 @@
 function formatDate(date){
-    let dayNum = date.getDay();
     let days = ["Sunday", "Monday", "Tuesday", "Thursday", "Friday", "Saturday"];
-    let day = days[dayNum];
+    let day = days[date.getDay();];
 
     let curDate = date.getDate();
 
-    let monthNum = date.getMonth();
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    let month = months[monthNum];
+    let month = months[date.getMonth()];
 
     let year = date.getFullYear();
 
