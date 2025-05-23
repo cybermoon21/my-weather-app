@@ -93,11 +93,22 @@ header h1 {
     letter-spacing: 2px;
 }
 
-.main-temp p {
+.temp-container {
+    display: flex;
+    margin: auto;
+}
+
+.temp-icon {
+    height: 120px;
+    width: auto;
+    margin: auto 0 auto auto;
+}
+.temp {
     font-size: 75px;
-    margin: 0;
+    margin: auto 0 auto auto;
     letter-spacing: 2px;
     line-height: 80px;
+    text-align: end;
 }
 
 .curve {

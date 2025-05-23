@@ -10,6 +10,9 @@ function updateApp(response){
 
     let descriptionElement = document.querySelector("#description");
     descriptionElement.innerHTML = response.data.condition.description;
+    
+    let iconElement = document.querySelector("#icon");
+    iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="temp-icon"/>`;
 
     let currentTempElement = document.querySelector("#current-temp");
     let currentTemp = Math.round(response.data.temperature.current);
