@@ -24,7 +24,7 @@ function runSearch(event){
     event.preventDefault();
     
     let city = document.querySelector("#search-input").value;
-    
+
     getApi(city);
 }
 
@@ -60,6 +60,8 @@ function formatTime(date){
     let formattedTime = `${hours}:${minutes}`;
     return formattedTime;
 }
+
+getApi("Durban");
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", runSearch);
