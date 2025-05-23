@@ -9,14 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <header>
             <h1>🌕CYBERMOON WEATHER APP</h1>
-            <form class="search-form">
-                <input type="search" placeholder="Enter a city..." required class="search-form-input">
+            <form class="search-form" id="search-form">
+                <input type="search" placeholder="Enter a city..." required class="search-form-input" id="search-input">
                 <input type="submit" value="Search" class="search-form-button">
             </form>
         </header>
@@ -27,23 +28,23 @@
                         <h3>Humidity</h3>
                         <hr />
                         <p>
-                            42%
+                            <span id="humidity">42</span>%
                         </p>
                     </div>
                     <div class="main-details">
                         <h3>Wind</h3>
                         <hr />
                         <p>
-                            1.65 km/h
+                            <span id="wind">1.65</span> km/h
                         </p>
                     </div>
                 </div>
                 <div class="main-temp">
-                    <h2>Paris</h2>
+                    <h2 id="current-city">Paris</h2>
                     <h3>Tuesday, 20 May 2025</h3>
                     <h3>15:30</h3>
                     <p>
-                        ☁ 24°C
+                        ☁ <span id="current-temp">24</span>°C
                     </p>
                 </div>
             </div>
@@ -93,4 +94,5 @@
     </div>
     <script src="src/script.js"></script>
 </body>
+
 </html>
