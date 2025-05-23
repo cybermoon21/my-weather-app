@@ -8,6 +8,9 @@ function updateApp(response){
     let windElement = document.querySelector("#wind");
     windElement.innerHTML = response.data.wind.speed;
 
+    let descriptionElement = document.querySelector("#description");
+    descriptionElement.innerHTML = response.data.condition.description;
+
     let currentTempElement = document.querySelector("#current-temp");
     let currentTemp = Math.round(response.data.temperature.current);
     currentTempElement.innerHTML = currentTemp;
