@@ -130,7 +130,7 @@ header h1 {
     text-align: center;
     border: 2px solid white;
     border-radius: 10px;
-    width: 80px;
+    width: 15%;
 }
 
 .forecast-container h3 {
@@ -139,11 +139,16 @@ header h1 {
 }
 
 .weather-emoji {
-    font-size: 40px;
-    margin: 10px 0;
+    width: 100%;
 }
 
 .weather-temp {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.weather-temp div{
     font-size: 20px;
     margin: 0 0 5px 0;
 }

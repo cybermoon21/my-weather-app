@@ -56,11 +56,48 @@ function updateApp(response){
     currentTempElement.innerHTML = currentTemp;
 }
 
-function getApi(city) {
-    let apiKey = '434at24abcb5077obabee921e64ef383';
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+function updateForecast(response){
+    let forecastElement = document.querySelector("#forecast");
+
+    let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+
+    let forecastResults = response.data.daily;
+
+    let forecastHTML  = "";
+
+    let now = "";
     
-    axios.get(apiUrl).then(updateApp);
+    for (let i = 0; i < 5; i++) {
+        let daily = forecastResults[i];
+        let now = new Date(daily.time * 1000);
+
+        forecastHTML += `<div class="forecast-container">
+            <h3>${days[now.getDay()]}</h3>
+            <img src="${daily.condition.icon_url}" class="weather-emoji" />
+            <div class="weather-temp">
+            <div>${Math.round(daily.temperature.minimum)}°C</div>
+            <div> / </div>
+            <div>${Math.round(daily.temperature.maximum)}°C</div>
+            </div>
+        </div>`;
+    }
+
+    forecastElement.innerHTML = forecastHTML;
+
+}
+
+function getCurrentTempApi(city){
+    let apiKey = '434at24abcb5077obabee921e64ef383';
+    let apiCurTempUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    
+    axios.get(apiCurTempUrl).then(updateApp);
+}
+
+function getForecastApi(city){
+    let apiKey = '434at24abcb5077obabee921e64ef383';
+    let apiForecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+
+    axios.get(apiForecastUrl).then(updateForecast);
 }
 
 function runSearch(event){
@@ -68,10 +105,12 @@ function runSearch(event){
     
     let city = document.querySelector("#search-input").value;
 
-    getApi(city);
+    getCurrentTempApi(city);
+    getForecastApi(city);
 }
 
-getApi("Durban");
+getCurrentTempApi("Durban");
+getForecastApi("Durban");
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", runSearch);
