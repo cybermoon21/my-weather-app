@@ -103,10 +103,13 @@ function getForecastApi(city){
 function runSearch(event){
     event.preventDefault();
     
-    let city = document.querySelector("#search-input").value;
+    let searchElement = document.querySelector("#search-input");
+    let city = searchElement.value;
 
     getCurrentTempApi(city);
     getForecastApi(city);
+
+    searchElement.value = "";
 }
 
 getCurrentTempApi("Durban");
