@@ -75,9 +75,9 @@ function updateForecast(response){
             <h3>${days[now.getDay()]}</h3>
             <img src="${daily.condition.icon_url}" class="weather-emoji" />
             <div class="weather-temp">
-            <div>${Math.round(daily.temperature.minimum)}°C</div>
+            <div>${Math.round(daily.temperature.minimum)}°</div>
             <div> / </div>
-            <div>${Math.round(daily.temperature.maximum)}°C</div>
+            <div>${Math.round(daily.temperature.maximum)}°</div>
             </div>
         </div>`;
     }
